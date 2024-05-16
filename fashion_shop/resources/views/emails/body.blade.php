@@ -9,5 +9,5 @@
 
 <div class="content">
     <h2>Hi {{$name}}</h2>
-    <p>Chào {{$name}} đơn hàng ... của bạn đã được xác thực và bla bla gì đó tự thêm nha</p>
+    <p>Chào {{$name}} đơn hàng  của bạn đã được sắp xếp và đang chuyển đến kho trung chuyển</p>
 </div>
