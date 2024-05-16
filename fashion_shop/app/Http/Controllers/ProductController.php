@@ -161,7 +161,6 @@ class ProductController extends Controller
                     File::delete($imagePath);
                 }
             }
-            // để cái này ở dưới vì nó xóa cmnr thì thg kia tìm tên ra thế đ nào đc mà xóa kkkkk - TrongKotD
             Product_image::where('product_id', $product->id)->delete();
         }else{
             return redirect()->back();
