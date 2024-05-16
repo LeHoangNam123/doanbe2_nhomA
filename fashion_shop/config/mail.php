@@ -39,8 +39,8 @@ return [
             'host' => 'smtp.gmail.com',
             'port' => 587,
             'encryption' => 'tls',
-            'username' => 'hope211203@gmail.com',
-            'password' => 'amyxfzkefhndtcku',
+            'username' => 'xuanphuoc18032003@gmail.com',
+            'password' => 'qbxaksljidaczmwq',
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
@@ -107,7 +107,7 @@ return [
     */
 
     'from' => [
-        'address' => 'esmart211203@gmail.com',
+        'address' => 'xuanphuoc18032003@gmail.com',
         'name' => 'Fashion-Shop',
     ],
 
