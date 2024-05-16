@@ -9,8 +9,5 @@
 
 <div class="content">
     <h2>Hi {{$name}}</h2>
-
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos eius quaerat quia,
-         velit repudiandae minima, veniam nam magnam aliquid consectetur iste inventore doloremque omnis est autem,
-          repellendus at sunt cum.</p>
+    <p>Chào {{$name}} đơn hàng ... của bạn đã được xác thực và bla bla gì đó tự thêm nha</p>
 </div>

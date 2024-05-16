@@ -10,6 +10,7 @@ use App\Models\Orderitem;
 use Mail;
 class OrderController extends Controller
 {
+<<<<<<< HEAD
     public function __construct(){
 
     }
@@ -87,4 +88,27 @@ class OrderController extends Controller
         return view('admin.order.detail', compact('order','orderitems'));
     }
     
+=======
+   
+    // cập nhật trạng thái đơn hàng
+    public function approveOrder($order_id){
+        $order = Order::find($order_id);
+        if(!$order){
+            return redirect()->back();
+        }
+        if($order->status !== Order::STATUS_PROCESSING){
+            return redirect()->back();
+        }
+        $order->status = Order::STATUS_APPROVED;
+        $order->save();
+        // Gửi mail cho user đó khi admin đã nhận đơn hàng
+        $name = $order->receiver;
+        $email_receiver = $order->user->email; // mail người nhận
+        Mail::send('emails.body', compact('name'), function($email) use ($email_receiver, $name) {
+            $email->subject('Thư giới thiệu');
+            $email->to($email_receiver, $name);
+        });
+        return redirect()->back();
+    }
+>>>>>>> XuanPhuoc
 }

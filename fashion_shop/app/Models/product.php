@@ -34,6 +34,7 @@ class product extends Model
     {
         return $this->hasOne(Product_image::class, 'product_id')->orderBy('id', 'asc');
     }
+    // cái relationship 
     public static function getFirstImage($product_id)
     {
         $firstImage = Product_image::where('product_id', $product_id)->orderBy('id')->first();
@@ -41,7 +42,6 @@ class product extends Model
         if ($firstImage) {
             return $firstImage->name;
         }
-
         return null;
     }
 }
