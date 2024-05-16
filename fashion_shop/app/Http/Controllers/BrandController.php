@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Validator;                                     ;
 class BrandController extends Controller
 {
     /**
-<<<<<<< HEAD
      * Display a listing of the resource.
      */
     public function index()
@@ -63,8 +62,6 @@ class BrandController extends Controller
     }
 
     /**
-=======
->>>>>>> XuanPhuoc
      * Display the specified resource.
      */
     public function show(string $id)
@@ -73,11 +70,6 @@ class BrandController extends Controller
     }
 
     /**
-<<<<<<< HEAD
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-=======
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
@@ -91,24 +83,11 @@ class BrandController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
->>>>>>> XuanPhuoc
     {
         $brand = Brand::find($id);
         if (!$brand) {
             return redirect()->back()->with('delete', 'Không tìm thấy brand!');
         }
-<<<<<<< HEAD
-        if ($brand->image) {
-            $brand_image = public_path('images/brand') . '/' . $brand->image;
-            if (file_exists($brand_image)) {
-                unlink($brand_image);
-            }
-        }
-        $brand->delete();
-        return redirect()->route('brands.index')->with('delete', 'Xóa thành công!');
-        //return response()->json(['message' => 'Brand deleted successfully'], 200);
-    }
-=======
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'image' => 'nullable|image|max:2048',
@@ -137,5 +116,23 @@ class BrandController extends Controller
         return redirect()->route('brands.index')->with('update', 'Sửa thành công!');
     }
 
->>>>>>> XuanPhuoc
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        $brand = Brand::find($id);
+        if (!$brand) {
+            return redirect()->back()->with('delete', 'Không tìm thấy brand!');
+        }
+        if ($brand->image) {
+            $brand_image = public_path('images/brand') . '/' . $brand->image;
+            if (file_exists($brand_image)) {
+                unlink($brand_image);
+            }
+        }
+        $brand->delete();
+        return redirect()->route('brands.index')->with('delete', 'Xóa thành công!');
+        //return response()->json(['message' => 'Brand deleted successfully'], 200);
+    }
 }
