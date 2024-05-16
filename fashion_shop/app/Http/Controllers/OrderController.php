@@ -10,7 +10,6 @@ use App\Models\Orderitem;
 use Mail;
 class OrderController extends Controller
 {
-<<<<<<< HEAD
     public function __construct(){
 
     }
@@ -60,7 +59,7 @@ class OrderController extends Controller
                 'quantity' => $item->quantity,
                 'price' => $price, // Giá sẽ lấy giá sản phẩm đó nhân số lượng -
             ]);
-            $orderItem->save();
+            $orderItem->save(); 
         }
         // B3: Xóa giỏ hàng
         Cart::where('user_id', $user->id)->delete();
@@ -87,9 +86,6 @@ class OrderController extends Controller
         }
         return view('admin.order.detail', compact('order','orderitems'));
     }
-    
-=======
-   
     // cập nhật trạng thái đơn hàng
     public function approveOrder($order_id){
         $order = Order::find($order_id);
@@ -110,5 +106,4 @@ class OrderController extends Controller
         });
         return redirect()->back();
     }
->>>>>>> XuanPhuoc
 }
