@@ -55,14 +55,14 @@ class ProductController extends Controller
         $product = Product::create($validateProduct);
         //create product images
         $validatorProductImages = $request->validate([
-            'images.*' => 'required|image', //=> 10 anh 
+            'images.*' => 'required|image', 
         ]);
     
         if ($request->has('images')) {
             foreach ($request->file('images') as $value) { 
-                $image_name = 'pro-imgs-' . time() . rand(1, 1000) . '.' . $value->extension(); //$value->extension() -> .png .jpg
-                $value->move(public_path('images/product_images'), $image_name); //luu anh vao project
-                Product_image::create([ //luu vao db 
+                $image_name = 'pro-imgs-' . time() . rand(1, 1000) . '.' . $value->extension();
+                $value->move(public_path('images/product_images'), $image_name); 
+                Product_image::create([ 
                     'name' => $image_name,
                     'product_id' => $product->id,
                 ]);

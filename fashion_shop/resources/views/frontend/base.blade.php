@@ -82,7 +82,7 @@
             </div>
         </div>
     </footer>
-    <div class="copyright"><p>C 2024, EmTrongKotd</p></div>
+    <div class="copyright"><p>C 2024</p></div>
     <script src="{{asset('js/script.js')}}"></script>
 </body>
 </html>

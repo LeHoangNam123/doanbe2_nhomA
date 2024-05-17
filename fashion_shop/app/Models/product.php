@@ -17,10 +17,10 @@ class product extends Model
         'category_id',
         'price',
         'status',
-        'featured',//update
+        'featured',
         'quantity_in_stock',
         'description',
-        'image_url', // Thêm trường ảnh vào danh sách fillable
+        'image_url',
     ];
     public function brand()
     {
@@ -34,7 +34,7 @@ class product extends Model
     {
         return $this->hasOne(Product_image::class, 'product_id')->orderBy('id', 'asc');
     }
-    // cái relationship 
+    // relationship 
     public static function getFirstImage($product_id)
     {
         $firstImage = Product_image::where('product_id', $product_id)->orderBy('id')->first();
